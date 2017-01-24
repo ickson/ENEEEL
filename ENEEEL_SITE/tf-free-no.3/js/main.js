@@ -64,7 +64,8 @@ function main() {
 
   	  $("#clients").owlCarousel({
   	 
-  	      navigation : false, // Show next and prev buttons
+  	      navigation : true, // Show next and prev buttons
+          navigationText: ["<i class='fa fa-angle-double-left' aria-hidden='true'></i>","<i class='fa fa-angle-double-right' aria-hidden='true'></i>"],
   	      slideSpeed : 300,
   	      paginationSpeed : 400,
   	      autoHeight : true,
@@ -81,7 +82,8 @@ function main() {
   	  });
 
       $("#testimonial").owlCarousel({
-        navigation : false, // Show next and prev buttons
+        navigation : true, // Show next and prev buttons
+        navigationText: ["<i class='fa fa-angle-double-left' aria-hidden='true'></i>","<i class='fa fa-angle-double-right' aria-hidden='true'></i>"],
         slideSpeed : 300,
         paginationSpeed : 400,
         singleItem:true

@@ -117,7 +117,7 @@ font-weight: 900;
 	}
 /* Home Style */
 #tf-home{
-	background: url(../img/01.jpg);
+	background: url(../img/dawn-190055.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -176,6 +176,22 @@ a.fa.fa-angle-down:hover{
 	color: #ffffff;
 	border: 2px solid #fcac45;
 }
+
+/* About Section */
+#tf-pacotes{
+	padding: 80px 0;
+}
+ul.pacotes-list{ margin: 30px 0 0 ;}
+ul.pacotes-list li{
+	display: block;
+	font-size: 16px;
+	line-height: 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+ul.pacotes-list li span{ 
+	margin-right: 10px;
+}
+
 
 /* About Section */
 #tf-about{
@@ -537,7 +553,7 @@ img.img-circle.team-img {
 
 label {
 	float: left;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 400;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -619,6 +635,21 @@ nav#footer p{
 	transition: all 0.5s;
 }
 #footer i.fa:hover{
+	background: #FCAC45;
+	border-color: #FCAC45;
+	color: #ffffff;
+}
+#tf-contact i.fa {
+	height: 30px;
+	width: 30px;
+	border: 2px solid #8c8c8c;
+	font-size: 20px;
+	padding: 4px 5px;
+	border-radius: 50%;
+	color: #8c8c8c;
+	transition: all 0.5s;
+}
+#tf-contact i.fa:hover{
 	background: #FCAC45;
 	border-color: #FCAC45;
 	color: #ffffff;
