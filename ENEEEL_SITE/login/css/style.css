@@ -10,25 +10,27 @@ body{
 a{color:inherit;text-decoration:none}
 
 #bod{
-	margin:0;
+	width:100%;
+	margin:auto;
 	color:#6a6f8c;
 	background:#c8c8c8;
 	font:600 16px/18px 'Open Sans',sans-serif;
+	position:relative;
 }
 
 .login-wrap{
 	width:100%;
 	margin:auto;
-	max-width:525px;
+	/*max-width:525px;
 	min-height:670px;
-	position:relative;
-	background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+	position:relative;*/
+	/*background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;*/
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
-	width:100%;
-	height:100%;
-	position:absolute;
+	/*width:100%;
+	height:100%;*/
+	/*position:absolute;*/
 	padding:90px 70px 50px 70px;
 	background:rgba(40,57,101,.9);
 }
@@ -70,12 +72,12 @@ a{color:inherit;text-decoration:none}
 	border-color:#1161ee;
 }
 .login-form{
-	min-height:345px;
+	/*min-height:345px;
 	position:relative;
 	-webkit-perspective:1000px;
 	        perspective:1000px;
 	-webkit-transform-style:preserve-3d;
-	        transform-style:preserve-3d;
+	        transform-style:preserve-3d;*/
 }
 .login-form .group{
 	margin-bottom:15px;
