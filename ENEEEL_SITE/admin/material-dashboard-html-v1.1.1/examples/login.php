@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>Inscrições - XII ENEEEL</title>
-
+	<noscript><h1>Ops, JavaScript desabilitado. Habilite para continuar a utilizar normalmente. Caso contrário, você poderá ter problemas.</h1></noscript>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
@@ -52,12 +52,12 @@
 	                            </div>
 	                            <div class="card-content table-responsive">
 	                                
-	                                <form>
+	                                <form onsubmit="mysubmit();return false" method="POST">
 	                                    <div class="row">
 	                                        <div class="col-md-12">
 												<div class="form-group label-floating">
 													<label class="control-label">Email</label>
-													<input type="text" class="form-control" required>
+													<input type="text" class="form-control" name="email" id="email" required>
 												</div>
 	                                        </div>
 	                                        
@@ -65,7 +65,7 @@
 
 	                                    <div class="row">
 	                                	<div class="col-md-6">
-		                                	<center><button type="submit" id="entrar" class="btn btn-primary">Entrar</button></center>
+		                                	<center><button type="submit" name="entrar" id="entrar" onclick="get_action(this);" class="btn btn-primary">Entrar</button></center>
 		                                </div>
 		                                <div class="col-md-6">
 		                                	<center><button type="submit" id="cadastrar" class="btn btn-primary">Cadastrar</button></center>
@@ -74,6 +74,10 @@
 		                            	</div>
 
 	                                </form>
+	                                <div id="alerta1" class="alert alert-danger">
+	                                    <span><b>Email já cadastrado.</b> <br>Pode ser que seja necessário realizar o passo de verificação de email.
+	                                    	Olhe sua caixa de email (e o seu spam/lixo).</span>
+	                                </div>
 	                                
 	                            </div>
 	                        </div>
@@ -113,8 +117,94 @@
 
 			// Javascript method's body can be found in assets/js/demos.js
         	demo.initDashboardPageCharts();
+        	$( "#alerta1" ).hide();
+
+		      var ajaxRequest;  // The variable that makes Ajax possible!
+
+			      try
+			      {
+			         // Opera 8.0+, Firefox, Safari 
+			         ajaxRequest = new XMLHttpRequest();
+			      }
+			      catch (e)
+			      {
+
+			         // Internet Explorer Browsers
+			         try
+			         {
+			            ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			         }catch (e) 
+			         {
+			            try
+			            {
+			               ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+			            }catch (e){
+
+			               // Something went wrong
+			               alert("Seu navegador não suporta uma de nossas tecnologias. Por favor, tentar em outro.");
+			               return false;
+			            }
+			         }
+		     	 }
+
 
     	});
+	</script>
+
+	<script type="text/javascript">
+		/*$("#entrar").click(function(){*/
+    	/*$.ajax({url: "demo_test.txt", success: function(result){
+        	$("#div1").html(result);
+    	}});*/
+    	/*alert("entrar");
+		});*/
+		var submit;
+		$("#entrar").click(function(){
+			submit = "entrar";
+		});
+		$("#cadastrar").click(function(){
+			submit = "cadastrar";
+
+		});
+		var clicked;
+		function mysubmit() {
+    		if(submit == "entrar")
+    		{
+    			alert("entrar");
+    		}
+    		/*CADASTRAR*/
+    		else
+    		{
+    			var dados = 'email=' + $("#email").val();
+    			$.ajax({
+    				url: "../php/cadastrarDo.php", 
+    				type: "POST",
+    				data: dados,
+    				success: function(data) 
+    				{
+    						/*VERIFICA SE FOI SUCESSO*/
+    						if(String(Object.values($.parseJSON(data))[0]) == "true")
+    						{
+    							alert("sucesso");
+    						}
+    						else
+    						{
+    							if(String(Object.values($.parseJSON(data))[0]) == "false")
+    							{
+    								var erro = String(Object.values($.parseJSON(data))[1]);
+    								if(erro == '1')
+    								{
+    									$("#alerta1").show();
+    								}
+    							}
+    						}
+    				}
+    			});
+    			 
+    		}
+    		return false;
+    	}
+		
 	</script>
 
 </html>
