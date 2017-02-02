@@ -52,7 +52,7 @@
 	                            </div>
 	                            <div class="card-content table-responsive">
 	                                
-	                                <form onsubmit="mysubmit();return false" method="POST">
+	                                <form id="formularioCadastra" onsubmit="mysubmit();return false" method="POST">
 	                                    <div class="row">
 	                                        <div class="col-md-12">
 												<div class="form-group label-floating">
@@ -74,9 +74,16 @@
 		                            	</div>
 
 	                                </form>
-	                                <div id="alerta1" class="alert alert-danger">
-	                                    <span><b>Email já cadastrado.</b> <br>Pode ser que seja necessário realizar o passo de verificação de email.
+	                                <div id="alerta2"  class="alert alert-danger">
+	                                    <span><b>Email já cadastrado.</b> <br>Pode ser que seja necessário realizar o 												  passo de verificação de email.
 	                                    	Olhe sua caixa de email (e o seu spam/lixo).</span>
+	                                </div>
+									<div id="aguarde"  class="alert alert-warning">
+	                                    <span><b>Aguarde...</b></span>
+	                                </div>
+										
+									<div id="sucesso"  class="alert alert-success">
+	                                    <span><b>Email cadastrado com sucesso. Você receberá uma mensagem de verificação em seu e-mail. Verifique a sua caixa de entrada ou de spam.</b> </span>
 	                                </div>
 	                                
 	                            </div>
@@ -117,8 +124,9 @@
 
 			// Javascript method's body can be found in assets/js/demos.js
         	demo.initDashboardPageCharts();
-        	$( "#alerta1" ).hide();
-
+        	$("#alerta2").hide();
+			$("#aguarde").hide();
+			$("#sucesso").hide();
 		      var ajaxRequest;  // The variable that makes Ajax possible!
 
 			      try
@@ -152,12 +160,7 @@
 	</script>
 
 	<script type="text/javascript">
-		/*$("#entrar").click(function(){*/
-    	/*$.ajax({url: "demo_test.txt", success: function(result){
-        	$("#div1").html(result);
-    	}});*/
-    	/*alert("entrar");
-		});*/
+		
 		var submit;
 		$("#entrar").click(function(){
 			submit = "entrar";
@@ -175,6 +178,7 @@
     		/*CADASTRAR*/
     		else
     		{
+				$("#aguarde").show();
     			var dados = 'email=' + $("#email").val();
     			$.ajax({
     				url: "../php/cadastrarDo.php", 
@@ -183,21 +187,25 @@
     				success: function(data) 
     				{
     						/*VERIFICA SE FOI SUCESSO*/
-    						if(String(Object.values($.parseJSON(data))[0]) == "true")
+    						if(data.split(",")[0] == "true")
     						{
-    							alert("sucesso");
+								$("#aguarde").hide();
+								$("#formularioCadastra").hide();
+    							$("#sucesso").show();
     						}
     						else
     						{
-    							if(String(Object.values($.parseJSON(data))[0]) == "false")
+    							if(data.split(",")[0] == "false")
     							{
-    								var erro = String(Object.values($.parseJSON(data))[1]);
-    								if(erro == '1')
+    								var erro = data.split(",")[1];
+    								if(erro == '2')
     								{
-    									$("#alerta1").show();
+										$("#aguarde").hide();
+    									$("#alerta2").show();
     								}
     							}
     						}
+						
     				}
     			});
     			 
