@@ -1,0 +1,11 @@
+SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+SELECT email FROM login WHERE email=?, ickson94@gmail.com
+SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, Lzb10D63iaqPClL
+Thursday 2nd of February 2017 05:17:05 PM SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+Thursday 2nd of February 2017 05:17:31 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+Thursday 2nd of February 2017 05:27:11 PM - SELECT email FROM login WHERE email=?, undefined
+Thursday 2nd of February 2017 05:27:11 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,undefined, 0, 0, 0, QsKgFor0lKOZqlX
+Thursday 2nd of February 2017 05:30:48 PM - SELECT email FROM login WHERE email=?, undefined
+Thursday 2nd of February 2017 05:30:49 PM - SELECT email FROM login WHERE email=?, undefined
+Thursday 2nd of February 2017 05:30:49 PM - SELECT email FROM login WHERE email=?, undefined

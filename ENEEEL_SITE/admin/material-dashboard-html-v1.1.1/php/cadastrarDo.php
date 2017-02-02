@@ -1,8 +1,16 @@
 <?php
 require_once("../PHPMailer_5.2.4/class.phpmailer.php");
+date_default_timezone_set('America/Recife');
+define('GUSER', 'xiieneeel@gmail.com');	// <-- Insira aqui o seu GMail
+define('GPWD', 'eneeel2017');		// <-- Insira aqui a senha do seu GMail
 
-define('GUSER', 'ickson94@gmail.com');	// <-- Insira aqui o seu GMail
-define('GPWD', 'ick#45son');		// <-- Insira aqui a senha do seu GMail
+function arquivoEscreve($arquivo, $texto)
+{
+    $cria = fopen($arquivo, "a");
+    $data = date('l jS \of F Y h:i:s A');
+    $escreve = fwrite($cria, $data." - ".$texto);
+    fclose($cria);
+}
 
 
 function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
@@ -11,9 +19,9 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 	$mail->IsSMTP();		// Ativar SMTP
 	$mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
 	$mail->SMTPAuth = true;		// Autenticação ativada
-	$mail->SMTPSecure = 'tls';	// SSL REQUERIDO pelo GMail
+	$mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
 	$mail->Host = 'smtp.gmail.com';	// SMTP utilizado
-	$mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
+	$mail->Port = 465;  		// A porta 587 deverá estar aberta em seu servidor
 	$mail->Username = GUSER;
 	$mail->Password = GPWD;
 	$mail->SetFrom($de, $de_nome);
@@ -110,6 +118,7 @@ function random($tamanho = 15, $simbolos = RANDOM_ALFANUM) {
 		$statement->bind_param('s', $email);
 		//Executa query
 		$statement->execute();
+        arquivoEscreve("mysql.txt", $query. ", " .$email."\n");
 		//Bind dos resultados
 		$statement->bind_result($email_result);
 
@@ -152,7 +161,7 @@ function random($tamanho = 15, $simbolos = RANDOM_ALFANUM) {
 		}
 
 		/*Caracteres aleatórios*/
-		$aleatorios = random(15, RANDOM_MAIUSCULAS | RANDOM_MINUSCULAS | RANDOM_NUMEROS | RANDOM_SIMBOLOS);
+		$aleatorios = random(15, RANDOM_MAIUSCULAS | RANDOM_MINUSCULAS | RANDOM_NUMEROS);
 		//Query a ser executada
 		$query = "INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);";
 		//Preparando a query
@@ -164,18 +173,26 @@ function random($tamanho = 15, $simbolos = RANDOM_ALFANUM) {
 		$statement->bind_param('sssis', $email, $senha, $chamado, $permissao, $aleatorios);
 		//Executa query
 		$statement->execute();
+        arquivoEscreve("mysql.txt", $query. "," .$email.", ".$senha.", ".$chamado.", ".$permissao.", ".$aleatorios."\n");
 		$statement->close();
 		
 		/*
 		* Envia e-mail para os cadastrados
 		*/
 		$assunto = "Cadastro - XII ENEEEL";
-		$mensagemHTML = "Mensagem de teste<br>";
-		$mensagemHTML .= "<b>Sua chave: </b>";
+		$mensagemHTML = "<center><h1>Ol&aacute;. Seja bem vindo ao XII ENEEEL!</h1></center>";
+        $mensagemHTML .= "Foi verificado que voc&ecirc; se cadastrou em nosso sistema. <b>Este &eacute; um e-mail de verifica&ccedil;&atilde;o de titularidade.</b><br><br>";
+		$mensagemHTML .= "Antes, temos uma chave de seguran&ccedil;a para voc&ecirc;. Guarde-a, pois ela poder&aacute; ser utilizada no futuro. <br><br><b>Sua chave &eacute;: </b>";
 		$mensagemHTML .= $aleatorios;
-		$mensagemHTML .= "<br>";
+		$mensagemHTML .= "<br><br>";
+        $mensagemHTML .= "Para confirmar sua titularidade e continuar o cadastro, clique <a href=\"http://localhost/admin/verifica.php?email=";
+        $mensagemHTML .=  $email;
+        $mensagemHTML .= "&chave=";
+        $mensagemHTML .= $aleatorios;
+        $mensagemHTML .= "\">aqui</a>.<br><br> Att, <br> Equipe do XII ENEEEL.";
 		$emailsender = "ickson94@gmail.com";
 		$nome = "XII ENEEEL";
+
 		smtpmailer($email, $emailsender, $nome, $assunto, $mensagemHTML);
 
 		
