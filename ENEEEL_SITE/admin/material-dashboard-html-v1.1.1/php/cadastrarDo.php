@@ -1,14 +1,15 @@
 <?php
 require_once("../PHPMailer_5.2.4/class.phpmailer.php");
 date_default_timezone_set('America/Recife');
-define('GUSER', 'xiieneeel@gmail.com');	// <-- Insira aqui o seu GMail
-define('GPWD', 'eneeel2017');		// <-- Insira aqui a senha do seu GMail
+define('GUSER', 'naoresponder@eneeel.com');	// <-- Insira aqui o seu GMail
+define('GPWD', 'nr#eneeel@2017');		// <-- Insira aqui a senha do seu GMail
 
 function arquivoEscreve($arquivo, $texto)
 {
+	$ip = $_SERVER["REMOTE_ADDR"];
     $cria = fopen($arquivo, "a");
     $data = date('l jS \of F Y h:i:s A');
-    $escreve = fwrite($cria, $data." - ".$texto);
+    $escreve = fwrite($cria, $ip.$data." - ".$texto);
     fclose($cria);
 }
 
@@ -17,11 +18,11 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 	global $error;
 	$mail = new PHPMailer();
 	$mail->IsSMTP();		// Ativar SMTP
-	$mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
+	$mail->SMTPDebug = 1;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
 	$mail->SMTPAuth = true;		// Autenticação ativada
-	$mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
-	$mail->Host = 'smtp.gmail.com';	// SMTP utilizado
-	$mail->Port = 465;  		// A porta 587 deverá estar aberta em seu servidor
+	$mail->SMTPSecure = 'tls';	// SSL REQUERIDO pelo GMail
+	$mail->Host = 'mx1.hostinger.com.br';	// SMTP utilizado
+	$mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
 	$mail->Username = GUSER;
 	$mail->Password = GPWD;
 	$mail->SetFrom($de, $de_nome);
@@ -31,6 +32,7 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 	$mail->IsHTML(true);
 	if(!$mail->Send()) {
 		$error = 'Mail error: '.$mail->ErrorInfo; 
+		arquivoEscreve("mysql.txt", $error);
 		return false;
 	} else {
 		$error = 'Mensagem enviada!';
@@ -190,7 +192,7 @@ function random($tamanho = 15, $simbolos = RANDOM_ALFANUM) {
         $mensagemHTML .= "&chave=";
         $mensagemHTML .= $aleatorios;
         $mensagemHTML .= "\">aqui</a>.<br><br> Att, <br> Equipe do XII ENEEEL.";
-		$emailsender = "ickson94@gmail.com";
+		$emailsender = "naoresponder@eneeel.com";
 		$nome = "XII ENEEEL";
 
 		smtpmailer($email, $emailsender, $nome, $assunto, $mensagemHTML);
