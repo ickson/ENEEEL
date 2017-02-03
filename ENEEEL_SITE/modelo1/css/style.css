@@ -118,9 +118,9 @@ font-weight: 900;
 	}
 /* Home Style */
 #tf-home{
-	background: url(../img/dawn-190055.jpg);
+	background: url(../img/image.jpg);
 	background-size: cover;
-	background-position: center;
+	background-position: bottom;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	color: #cfcfcf;
