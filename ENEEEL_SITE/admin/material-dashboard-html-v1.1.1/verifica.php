@@ -34,7 +34,7 @@
 			<!--
 	    	TABELA DE SELEÇÃO
 			-->
-	    	<div class="content center-block"  style="padding-top: 12%;">
+	    	<div id="tela" class="content center-block"  style="padding-top: 12%; display: none;">
 	            <div class="container">
 	                
 	                
@@ -91,7 +91,7 @@
 	                                <div class="row">
 	                                <div class="col-md-12">
 		                                <div id="alerta"  class="alert alert-danger">
-		                                    <span><b>Ocorreu um erro.Verifique os seus dados. </b><br>
+		                                    <span><b>Ocorreu um erro. Verifique os seus dados. </b><br>
 		                                    	Caso esteja com problemas, envie um email para: meajuda@eneeel.com
 		                                   	</span>
 		                                </div>
@@ -105,7 +105,7 @@
 		                                    <span><b>Verifique o tamanho dos dados informado.</b></span>
 		                                </div>
 										<div id="sucesso"  class="alert alert-success">
-		                                    <span><b>Você foi cadastrado em nosso sistema. Clique <a href=\"login.php\">aqui para entrar.</b> </span>
+		                                    <span><b>Você foi cadastrado em nosso sistema. Clique <a href='login.php'>aqui para entrar.</b> </span>
 		                                </div>
 	                                </div>
 	                                </div>
@@ -146,9 +146,10 @@
     	$(document).ready(function(){
 
 			// Javascript method's body can be found in assets/js/demos.js
+        	$("#tela").show();
         	demo.initDashboardPageCharts();
         	$("#alerta").hide();
-			$("#aguarde").hide();
+        	$("#aguarde").hide();
 			$("#senha").hide();
 			$("#senha_2").hide();
 			$("#sucesso").hide();
@@ -218,8 +219,7 @@
     				}
     				else
     				{
-    					alert("entoru");
-				    				$("#alerta").hide();
+    								$("#alerta").hide();
 									$("#aguarde").show();
 									$("#senha").hide();
 									$("#senha_2").hide();
@@ -242,35 +242,40 @@
 									} 
 
 					    			var dados = 'email=' + email + "&chave=" + chave + "&senha=" + $("#senha1").val() + "&chamado=" + $("#chamado").val();
-					    			alert(dados);
-					    			/*$.ajax({
-					    				url: "php/cadastrarDo.php", 
+					    			$.ajax({
+					    				url: "php/verificaDo.php", 
 					    				type: "POST",
 					    				data: dados,
 					    				success: function(data) 
-					    				{*/
+					    				{
 					    						/*VERIFICA SE FOI SUCESSO*/
-					    				/*		if(data.split(",")[0] == "true")
+					    						if(data.split(",")[0] == "true")
 					    						{
+					    							$("#alerta").hide();
+													$("#formularioVerifica").hide();
 													$("#aguarde").hide();
-													$("#formularioCadastra").hide();
-					    							$("#sucesso").show();
+													$("#senha").hide();
+													$("#senha_2").hide();
+													$("#sucesso").show();
+													$("#cadastrar").hide();
 					    						}
 					    						else
 					    						{
 					    							if(data.split(",")[0] == "false")
 					    							{
 					    								var erro = data.split(",")[1];
-					    								if(erro == '2')
-					    								{
-															$("#aguarde").hide();
-					    									$("#alerta2").show();
-					    								}
+				    									$("#alerta").show();
+														$("#aguarde").hide();
+														$("#senha").hide();
+														$("#senha_2").hide();
+														$("#sucesso").hide();
+
+				    								
 					    							}
 					    						}
 											
 					    				}
-					    			});*/	
+					    			});	
     				}     				
     			}
 				 

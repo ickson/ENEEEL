@@ -9,3 +9,53 @@ Thursday 2nd of February 2017 05:27:11 PM - INSERT INTO login (email, senha, cha
 Thursday 2nd of February 2017 05:30:48 PM - SELECT email FROM login WHERE email=?, undefined
 Thursday 2nd of February 2017 05:30:49 PM - SELECT email FROM login WHERE email=?, undefined
 Thursday 2nd of February 2017 05:30:49 PM - SELECT email FROM login WHERE email=?, undefined
+::1Friday 3rd of February 2017 02:22:31 PM - SELECT email FROM login WHERE email=?, ickson94@gmail.com
+::1Friday 3rd of February 2017 02:22:35 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+::1Friday 3rd of February 2017 02:22:36 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, LFVnWGjo6ClN4fb
+127.0.0.1Friday 3rd of February 2017 02:25:29 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+127.0.0.1Friday 3rd of February 2017 02:25:29 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, jerMgwimaqw5M2B
+127.0.0.1Friday 3rd of February 2017 02:28:20 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+127.0.0.1Friday 3rd of February 2017 02:28:20 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, TgFenqDjWhUehl0
+127.0.0.1Friday 3rd of February 2017 02:31:47 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+127.0.0.1Friday 3rd of February 2017 02:31:47 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, HbWNYkpCiks7bjf
+127.0.0.1Friday 3rd of February 2017 02:37:36 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+127.0.0.1Friday 3rd of February 2017 02:37:36 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, dKNXH8C0yQLId6b
+127.0.0.1Friday 3rd of February 2017 02:40:21 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+127.0.0.1Friday 3rd of February 2017 02:40:21 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, vMk3dhgR33B4m7I
+127.0.0.1Friday 3rd of February 2017 02:40:24 PM - Mail error: SMTP Error: The following recipients failed: ickson94@hotmail.com<p>SMTP server error: 5.7.1 <ickson94@gmail.com>: Sender address rejected: not owned by user naoresponder@eneeel.com
+</p>
+127.0.0.1Friday 3rd of February 2017 02:42:17 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+127.0.0.1Friday 3rd of February 2017 02:42:17 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, QTpDFjQTj8iFA9N
+127.0.0.1Friday 3rd of February 2017 02:42:19 PM - Mail error: SMTP Error: The following recipients failed: ickson94@hotmail.com<p>SMTP server error: 5.7.1 <ickson94@gmail.com>: Sender address rejected: not owned by user naoresponder@eneeel.com
+</p>
+127.0.0.1Friday 3rd of February 2017 02:45:31 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+127.0.0.1Friday 3rd of February 2017 02:45:31 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, 8vSaUogQGhnSMV2
+127.0.0.1Friday 3rd of February 2017 02:45:41 PM - Mail error: The following From address failed: ickson94@gmail.com : Called Mail() without being connected127.0.0.1Friday 3rd of February 2017 02:47:23 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+127.0.0.1Friday 3rd of February 2017 02:47:23 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, 2iJcqC4c3DFZNu9
+127.0.0.1Friday 3rd of February 2017 02:47:33 PM - Mail error: The following From address failed: naoresponder@eneeel.com : Called Mail() without being connected127.0.0.1Friday 3rd of February 2017 02:50:05 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+127.0.0.1Friday 3rd of February 2017 02:50:05 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, 6nZYTXpWYz4AXHy
+127.0.0.1Friday 3rd of February 2017 02:50:06 PM - Mail error: The following From address failed: naoresponder@eneeel.com : Called Mail() without being connected127.0.0.1Friday 3rd of February 2017 02:52:37 PM - SELECT email FROM login WHERE email=?, ickson94@hotmail.com
+127.0.0.1Friday 3rd of February 2017 02:52:37 PM - INSERT INTO login (email, senha, chamado, permissao, chave) values (?,?,?,?,?);,ickson94@hotmail.com, 0, 0, 0, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:03:04 PM - SELECT email FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:03:16 PM - SELECT email FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:03:17 PM - SELECT email FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:03:17 PM - SELECT email FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:03:17 PM - SELECT email FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:03:30 PM - SELECT email FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:03:31 PM - SELECT email FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:03:31 PM - SELECT email FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:03:32 PM - SELECT email FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:03:39 PM - SELECT email FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:11:34 PM - SELECT permissao FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:13:22 PM - SELECT permissao FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3p
+::1Friday 3rd of February 2017 08:14:00 PM - SELECT permissao FROM login WHERE email=? and chave=?, ickson94@hotmail.co, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:14:42 PM - SELECT permissao FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:25:14 PM - SELECT permissao FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:25:14 PM - UPDATE login set senha=?, chamado=?, permissao=? where email=?,$2y$10$DlhrXajdSUw1MEEUA2..OuUI0twrWvLIOb9H8HYM3RUQWnT7XuJvC, ickson, 1, ickson94@hotmail.com
+::1Friday 3rd of February 2017 08:26:57 PM - SELECT permissao FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:27:13 PM - SELECT permissao FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:27:41 PM - SELECT permissao FROM login WHERE email=? and chave=?, ickson94@hotmail.co, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:28:04 PM - SELECT permissao FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:28:04 PM - UPDATE login set senha=?, chamado=?, permissao=? where email=?,$2y$10$RJgurwLeCkYUXwhk2tGaoOmxrSLqA9QgFhxTecQZOPnMr.A8ulpfi, Ickson, 1, ickson94@hotmail.com
+::1Friday 3rd of February 2017 08:28:55 PM - SELECT permissao FROM login WHERE email=? and chave=?, ickson94@hotmail.com, SrfMEWHDCKLQQ3j
+::1Friday 3rd of February 2017 08:28:55 PM - UPDATE login set senha=?, chamado=?, permissao=? where email=?,$2y$10$//nK8ouhoAsbiqcy7PbaNuieFqIL1ycrIE98phAH.ToC71SzMTRaS, Ickson, 1, ickson94@hotmail.com
